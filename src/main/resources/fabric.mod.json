@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "real-hungry",
+	"version": "${version}",
+	"name": "Real Hungry",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Lancet_"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/real-hungry/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.lancet_.realhungry.RealHungry"
+		],
+		"client": [
+			"net.lancet_.realhungry.RealHungryClient"
+		],
+		"fabric-datagen": [
+			"net.lancet_.realhungry.RealHungryDataGenerator"
+		]
+	},
+	"mixins": [
+		"real-hungry.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.2",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
