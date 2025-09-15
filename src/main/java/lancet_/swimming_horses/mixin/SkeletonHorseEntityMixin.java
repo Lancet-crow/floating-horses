@@ -20,8 +20,8 @@ public abstract class SkeletonHorseEntityMixin extends LivingEntity {
     }
 
     @Inject(method = "initCustomGoals", at = @At("TAIL"))
-    private void addSwimGoal(CallbackInfo ci){
-        ((MobEntityAccessor)this).goalSelector().add(0, new SwimGoal((MobEntity) (Object) this));
+    private void addSwimGoal(CallbackInfo ci) {
+        ((MobEntityAccessor) this).goalSelector().add(0, new SwimGoal((MobEntity) (Object) this));
     }
 
     @Override

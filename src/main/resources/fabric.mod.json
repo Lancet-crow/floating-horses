@@ -1,42 +1,42 @@
 {
-	"schemaVersion": 1,
-	"id": "floating-horses",
-	"version": "${version}",
-	"name": "Floating Horses",
-	"description": "This is a simple mod that makes horses and skeleton horses float on water!",
-	"authors": [
-		"Lancet_"
-	],
-	"contact": {
-		"homepage": "https://modrinth.com/mod/floating-horses",
-		"sources": "https://github.com/Lancet-crow/floating-horses",
-		"issues": "https://github.com/Lancet-crow/floating-horses/issues"
-	},
-	"license": "MIT",
-	"icon": "assets/floating-horses/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"lancet_.floating_horses.FloatingHorses"
-		]
-	},
-	"mixins": [
-		"floating-horses.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.16.9",
-		"minecraft": "~1.20.1",
-		"fabric-api": "*",
-		"fzzy_config": ">=0.6.9+1.20.1"
-	},
-	"custom": {
-		"fzzy_config": [
-			"floating-horses"
-		],
-		"modmenu": {
-			"links": {
-				"modmenu.discord": "https://discord.gg/RQ9cCyMr5Z"
-			}
-		}
-	}
+  "schemaVersion": 1,
+  "id": "floating-horses",
+  "version": "${version}",
+  "name": "Floating Horses",
+  "description": "This is a simple mod that makes horses and skeleton horses float on water!",
+  "authors": [
+    "Lancet_"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/floating-horses",
+    "sources": "https://github.com/Lancet-crow/floating-horses",
+    "issues": "https://github.com/Lancet-crow/floating-horses/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/floating-horses/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "lancet_.floating_horses.FloatingHorses"
+    ]
+  },
+  "mixins": [
+    "floating-horses.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "~1.20.1",
+    "fabric-api": "*",
+    "fzzy_config": ">=0.6.9+1.20.1"
+  },
+  "custom": {
+    "fzzy_config": [
+      "floating-horses"
+    ],
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/RQ9cCyMr5Z"
+      }
+    }
+  }
 }

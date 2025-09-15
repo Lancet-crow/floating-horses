@@ -9,21 +9,20 @@ import net.minecraft.util.Identifier;
 
 public class SwimmingHorsesConfig extends Config {
     public static SwimmingHorsesConfig config = ConfigApiJava.registerAndLoadConfig(SwimmingHorsesConfig::new, RegisterType.BOTH);
+    @ValidatedFloat.Restrict(min = 0f, max = 1f, type = ValidatedNumber.WidgetType.SLIDER)
+    public float normalHorseSpeed = 0.8f;
+    @ValidatedFloat.Restrict(min = 0f, max = 1f, type = ValidatedNumber.WidgetType.SLIDER)
+    public float skeletonHorseSpeed = 0.96f;
+
     public SwimmingHorsesConfig() {
         super(Identifier.of(SwimmingHorses.MOD_ID, "config"));
     }
 
-    @ValidatedFloat.Restrict(min = 0f, max = 1f, type = ValidatedNumber.WidgetType.SLIDER)
-    public float normalHorseSpeed = 0.8f;
-
-    @ValidatedFloat.Restrict(min = 0f, max = 1f, type = ValidatedNumber.WidgetType.SLIDER)
-    public float skeletonHorseSpeed = 0.96f;
-
-    public float scaleSpeed(float startingSpeed){
+    public float scaleSpeed(float startingSpeed) {
         double minSpeed = 1;
         double maxSpeed = 2;
-        double b = Math.log((maxSpeed/minSpeed)/(maxSpeed-minSpeed));
-        double a = maxSpeed / Math.exp(b*maxSpeed);
-        return (float) (a * Math.exp(b*startingSpeed));
+        double b = Math.log((maxSpeed / minSpeed) / (maxSpeed - minSpeed));
+        double a = maxSpeed / Math.exp(b * maxSpeed);
+        return (float) (a * Math.exp(b * startingSpeed));
     }
 }

@@ -17,12 +17,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(AbstractHorseEntity.class)
 public abstract class AbstractHorseEntityMixin extends LivingEntity {
 
+    @Unique
+    private int tick = 0;
+
     protected AbstractHorseEntityMixin(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
-
-    @Unique
-    private int tick = 0;
 
     @Inject(method = "tickControlled", at = @At(value = "TAIL"))
     private void swim(PlayerEntity controllingPlayer, Vec3d movementInput, CallbackInfo ci) {
