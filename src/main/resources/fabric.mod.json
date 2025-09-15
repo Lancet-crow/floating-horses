@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "real-hungry",
+	"id": "swimming-horses",
 	"version": "${version}",
-	"name": "Real Hungry",
+	"name": "Swimming Horses",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Lancet_"
@@ -12,29 +12,30 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/real-hungry/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.lancet_.realhungry.RealHungry"
-		],
-		"client": [
-			"net.lancet_.realhungry.RealHungryClient"
-		],
-		"fabric-datagen": [
-			"net.lancet_.realhungry.RealHungryDataGenerator"
+			"lancet_.swimming_horses.SwimmingHorses"
 		]
 	},
 	"mixins": [
-		"real-hungry.mixins.json"
+		"swimming-horses.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.2",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"fzzy_config": ">=0.6.9+1.20.1"
 	},
-	"suggests": {
-		"another-mod": "*"
+	"custom": {
+		"fzzy_config": [
+			"swimming-horses"
+		],
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/RQ9cCyMr5Z"
+			}
+		}
 	}
 }

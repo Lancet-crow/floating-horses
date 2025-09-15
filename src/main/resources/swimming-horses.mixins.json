@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "lancet_.swimming_horses.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"AbstractHorseEntityMixin",
+		"MobEntityAccessor",
+		"SkeletonHorseEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
