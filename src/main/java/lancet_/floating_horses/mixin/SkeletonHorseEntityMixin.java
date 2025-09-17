@@ -1,6 +1,6 @@
-package lancet_.swimming_horses.mixin;
+package lancet_.floating_horses.mixin;
 
-import lancet_.swimming_horses.SwimmingHorsesConfig;
+import lancet_.floating_horses.FloatingHorsesConfig;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
@@ -20,12 +20,12 @@ public abstract class SkeletonHorseEntityMixin extends LivingEntity {
     }
 
     @Inject(method = "initCustomGoals", at = @At("TAIL"))
-    private void addSwimGoal(CallbackInfo ci){
-        ((MobEntityAccessor)this).goalSelector().add(0, new SwimGoal((MobEntity) (Object) this));
+    private void addSwimGoal(CallbackInfo ci) {
+        ((MobEntityAccessor) this).goalSelector().add(0, new SwimGoal((MobEntity) (Object) this));
     }
 
     @Override
     public float getBaseMovementSpeedMultiplier() {
-        return SwimmingHorsesConfig.config.scaleSpeed(SwimmingHorsesConfig.config.skeletonHorseSpeed);
+        return FloatingHorsesConfig.config.scaleSpeed(FloatingHorsesConfig.config.skeletonHorseSpeed);
     }
 }

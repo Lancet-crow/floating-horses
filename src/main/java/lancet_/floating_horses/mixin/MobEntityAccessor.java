@@ -1,4 +1,4 @@
-package lancet_.swimming_horses.mixin;
+package lancet_.floating_horses.mixin;
 
 import net.minecraft.entity.ai.goal.GoalSelector;
 import net.minecraft.entity.mob.MobEntity;

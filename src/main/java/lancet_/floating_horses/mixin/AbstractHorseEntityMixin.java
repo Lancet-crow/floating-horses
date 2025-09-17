@@ -1,6 +1,6 @@
-package lancet_.swimming_horses.mixin;
+package lancet_.floating_horses.mixin;
 
-import lancet_.swimming_horses.SwimmingHorsesConfig;
+import lancet_.floating_horses.FloatingHorsesConfig;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.AbstractHorseEntity;
@@ -17,12 +17,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(AbstractHorseEntity.class)
 public abstract class AbstractHorseEntityMixin extends LivingEntity {
 
+    @Unique
+    private int tick = 0;
+
     protected AbstractHorseEntityMixin(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
-
-    @Unique
-    private int tick = 0;
 
     @Inject(method = "tickControlled", at = @At(value = "TAIL"))
     private void swim(PlayerEntity controllingPlayer, Vec3d movementInput, CallbackInfo ci) {
@@ -57,6 +57,6 @@ public abstract class AbstractHorseEntityMixin extends LivingEntity {
 
     @Override
     public float getBaseMovementSpeedMultiplier() {
-        return SwimmingHorsesConfig.config.scaleSpeed(SwimmingHorsesConfig.config.normalHorseSpeed);
+        return FloatingHorsesConfig.config.scaleSpeed(FloatingHorsesConfig.config.normalHorseSpeed);
     }
 }
