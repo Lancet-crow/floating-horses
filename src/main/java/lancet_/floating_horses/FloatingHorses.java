@@ -10,5 +10,6 @@ public class FloatingHorses implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        FloatingHorsesConfig.init();
     }
 }

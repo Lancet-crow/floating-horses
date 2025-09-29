@@ -25,4 +25,6 @@ public class FloatingHorsesConfig extends Config {
         double a = maxSpeed / Math.exp(b * maxSpeed);
         return (float) (a * Math.exp(b * startingSpeed));
     }
+
+    public static void init(){}
 }
