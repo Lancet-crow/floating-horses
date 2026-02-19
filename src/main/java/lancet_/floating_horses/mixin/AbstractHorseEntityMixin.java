@@ -1,6 +1,5 @@
 package lancet_.floating_horses.mixin;
 
-import lancet_.floating_horses.FloatingHorses;
 import lancet_.floating_horses.FloatingHorsesConfig;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -43,7 +42,6 @@ public abstract class AbstractHorseEntityMixin extends LivingEntity {
 
             if (this.isTouchingWater()) {
                 this.addVelocity(0.0, (k > 0.8 ? 0.04 : 0.01), 0.0);
-                FloatingHorses.LOGGER.info("Class: {}, velocity: {}", this.getClass().getSimpleName(), this.getVelocity());
             } else if (this.isInLava()) {
                 this.addVelocity(0.0, (k > 0.8 ? 0.11 : 0.0275), 0.0);
             } else {
