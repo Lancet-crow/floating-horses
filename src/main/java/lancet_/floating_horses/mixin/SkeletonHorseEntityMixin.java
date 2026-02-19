@@ -6,6 +6,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.SkeletonHorseEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,6 +28,11 @@ public abstract class SkeletonHorseEntityMixin extends LivingEntity {
 
     @Override
     public float getBaseMovementSpeedMultiplier() {
-        return FloatingHorsesConfig.config.scaleSpeed(FloatingHorsesConfig.config.skeletonHorseSpeed);
+        if (this.getControllingPassenger() instanceof PlayerEntity &&
+                Math.abs(this.getControlledMovementInput((PlayerEntity) this.getControllingPassenger(), Vec3d.ZERO)
+                        .subtract(Vec3d.ZERO).lengthSquared()) >= 0.01){
+            return FloatingHorsesConfig.config.scaleSpeed(FloatingHorsesConfig.config.skeletonHorseSpeed);
+        }
+        return 0.96F;
     }
 }
